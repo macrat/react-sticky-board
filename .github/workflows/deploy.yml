@@ -3,8 +3,26 @@ on:
     branches: master
 
 jobs:
+  test:
+    name: Test and Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Install dependencies
+        run: npm ci --dev
+
+      - name: Do ESLint
+        run: npm run lint
+
   build-deploy:
     name: Build and Deploy
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1

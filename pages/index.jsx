@@ -1,17 +1,17 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import Head from 'next/head';
 
 import Card from '../components/Card';
 import CreateButton from '../components/CreateButton';
 
 
-export default () => {
+export default function Index() {
     const [cards, setCards] = useState([
         {key: 0, value: "hello world!", pos: {x: 100, y: 170, order: 0}},
         {key: 1, value: "foo bar", pos: {x: 300, y: 230, order: 0}},
     ]);
 
-    const [orderOffset, _] = useState(new Date().getTime());
+    const orderOffset = useState(new Date().getTime())[0];
 
     const onChange = card => {
         const cs = cards.slice();

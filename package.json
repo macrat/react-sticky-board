@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
+    "lint": "eslint pages/** components/**",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,8 +18,35 @@
   "author": "MacRat <m@crat.jp> (https://blanktar.jp)",
   "license": "MIT",
   "dependencies": {
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
     "next": "^9.1.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
-  }
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true
+    },
+    "plugins": [
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2019,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "eslintIgnore": [".next/", "out/", "next.config.js"]
 }

@@ -1,7 +1,8 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
+import PropTypes from 'react/prop-types';
 
 
-export default ({value, onChange, pos, onChangePos}) => {
+export default function Card({value, onChange, pos, onChangePos}) {
     const [drag, setDrag] = useState({
         dragging: false,
         fromX: 0,
@@ -16,7 +17,7 @@ export default ({value, onChange, pos, onChangePos}) => {
             startDrag(e);
         }
     };
-    const endDrag = e => setDrag({dragging: false, fromX: 0, fromY: 0});
+    const endDrag = () => setDrag({dragging: false, fromX: 0, fromY: 0});
 
     return (
         <div style={{top: pos.y, left: pos.x, zIndex: pos.order}}
@@ -48,3 +49,16 @@ export default ({value, onChange, pos, onChangePos}) => {
         </div>
     )
 }
+
+
+Card.propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    pos: PropTypes.shape({
+        x: PropTypes.number,
+        y: PropTypes.number,
+        order: PropTypes.number,
+    }),
+    onChangePos: PropTypes.func,
+
+};
