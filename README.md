@@ -5,7 +5,7 @@ My learning sandbox of the [React](https://reactjs.org) / [Next.js](https://next
 
 ## Try it on Web
 
-You can try it on [github pages](https://macrat.github.io/react-sticky-board).
+You can try it on [github pages](https://macrat.github.io/react-sticky-board/).
 
 ## Try it on local
 
