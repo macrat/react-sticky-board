@@ -18,9 +18,8 @@
   "author": "MacRat <m@crat.jp> (https://blanktar.jp)",
   "license": "MIT",
   "dependencies": {
-    "eslint": "^6.6.0",
-    "eslint-plugin-react": "^7.16.0",
     "next": "^9.1.1",
+    "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   },
@@ -48,5 +47,13 @@
       }
     }
   },
-  "eslintIgnore": [".next/", "out/", "next.config.js"]
+  "eslintIgnore": [
+    ".next/",
+    "out/",
+    "next.config.js"
+  ],
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0"
+  }
 }

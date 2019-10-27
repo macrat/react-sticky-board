@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import PropTypes from 'react/prop-types';
+import PropTypes from 'prop-types';
 
 
 export default function Card({value, onChange, pos, onChangePos}) {
