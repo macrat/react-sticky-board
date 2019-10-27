@@ -23,6 +23,9 @@ jobs:
       - name: Export
         run: npm run export
 
+      - name: Make nojekyll
+        run: :> ./out/.nojekyll
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2.5.0
         env:
